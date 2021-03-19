@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+    <h1>{{title}} Worth: {{totalvalue}}</h1>
+    <form method="POST">
+        <p>
+            Input your name and click the coin.<br />
+            <input type="text" id="username" name="username" value="{{username}}" /><br />
+        </p>
+        <div>
+            <input type="image" src="{{ url_for('static', filename='coin.png') }}" name="submit" value="yes" width="100" height="100" />
+        </div>
+        <div>
+            <img src="{{ url_for('static', filename='jar.png') }}" />
+        </div>
+    </form>
+    
+    <ul>
+    {%for entry in namelist %}
+        <li>{{entry["name"]}} - {{entry["owed"]}}</li>
+    {%endfor%}
+    </ul>
+</body>
+</html>
